@@ -7,7 +7,7 @@ from zeroconf import ServiceBrowser, Zeroconf
 import re
 
 DISCOVERY_TIMEOUT = 5
-DEBOUNCE_WAIT = 1.5
+DEBOUNCE_WAIT = 1.25
 ADB_SERVICE_TYPE = "_adb-tls-connect._tcp.local."
 
 class AdbServiceListener:
