@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adbc"
+version = "1.0.0"
+description = "Auto-discover and connect to Android devices over ADB wireless debugging using mDNS/Zeroconf."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "mwdle" }]
+requires-python = ">=3.10"
+dependencies = ["zeroconf~=0.148.0"]
+
+[project.urls]
+Repository = "https://github.com/mwdle/adbc"
+
+[project.scripts]
+adbc = "adbc:find_and_connect"
+
+[tool.setuptools]
+py-modules = ["adbc"]
