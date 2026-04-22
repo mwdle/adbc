@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "adbc"
 version = "1.0.0"
-description = "Auto-discover and connect to Android devices over ADB wireless debugging using mDNS/Zeroconf."
+description = "A CLI utility to automatically discover and connect to Android devices via mDNS and Wireless ADB"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "mwdle" }]
