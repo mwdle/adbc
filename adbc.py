@@ -15,14 +15,14 @@ class AdbServiceListener:
         self.found_devices = {}
         self.last_discovery_time = 0
 
-    def remove_service(self, zeroconf, type, name):
+    def remove_service(self, zeroconf, service_type, name):
         self.found_devices.pop(name, None)
 
-    def update_service(self, zeroconf, type, name):
-        self.add_service(zeroconf, type, name)
+    def update_service(self, zeroconf, service_type, name):
+        self.add_service(zeroconf, service_type, name)
 
-    def add_service(self, zeroconf, type, name):
-        info = zeroconf.get_service_info(type, name)
+    def add_service(self, zeroconf, service_type, name):
+        info = zeroconf.get_service_info(service_type, name)
         if info:
             self.found_devices[name] = info
             self.last_discovery_time = time.monotonic()
