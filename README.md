@@ -7,18 +7,23 @@ A small Python utility that auto-discovers and connects to Android devices over 
 - **ADB:** Must be installed and available on your `PATH`.
 - **Android 11+:** Device must have **Wireless debugging** enabled. (Note: This is not compatible with legacy "ADB over WiFi" on older devices).
 - **Paired:** Your device must already be **paired** with your machine (Settings → Developer options → Wireless debugging → Pair device with pairing code).
-- **Python 3** with dependencies installed:
 
-  ```bash
-  pip install -r requirements.txt
-  ```
+## Installation
+
+Install via `uvx` or `pipx` (recommended):
+
+```bash
+uv tool install git+https://github.com/mwdle/adbc.git
+# OR
+pipx install git+https://github.com/mwdle/adbc.git
+```
+
+> `pipx` installs CLI tools in an isolated environment and exposes them globally — no virtualenv management required. Install it with `pip install pipx` if you don't have it. Alternatively, use `pip install git+https://github.com/mwdle/adbc.git` inside an active virtual environment.
 
 ## Usage
 
-If you have set the script as executable, you can run it directly. Otherwise, use `python3`:
-
 ```bash
-./adbc.py
+adbc
 ```
 
 **How it works:**
@@ -40,7 +45,10 @@ connected to 192.168.0.100:41061
 connected to 192.168.0.91:41624
 ```
 
-> **Tip:** To invoke the script as just `adbc` from anywhere, you can add a shell alias or create a small wrapper script on your `PATH`. Refer to your OS and shell's documentation for the exact steps.
+## Troubleshooting
+
+- **No devices found:** Ensure your PC and phone are on the exact same Wi-Fi network. Some public or corporate networks use "AP Isolation" which blocks devices from seeing each other.
+- **Command succeeds but fails to connect:** Your PC's RSA key is likely not authorized. Run `adb pair <ip>:<pairing_port>` manually once and accept the prompt on your device to establish trust.
 
 ## License
 
