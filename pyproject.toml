@@ -10,7 +10,7 @@ readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "mwdle" }]
 requires-python = ">=3.10"
-dependencies = ["zeroconf~=0.150.0"]
+dependencies = ["zeroconf~=0.151.3"]
 
 [project.urls]
 Repository = "https://github.com/mwdle/adbc"
